@@ -1,9 +1,10 @@
-/* global describe, it, afterEach */
+/* global describe, it, beforeEach, afterEach */
 'use strict'
 const assert = require('assert')
 const mock = require('mock-fs')
+const rewire = require('rewire')
 
-const assertDir = require('../lib/index')
+const assertDir = rewire('../lib/index')
 
 describe('assert-dir', function () {
   afterEach(() => mock.restore())
@@ -48,6 +49,18 @@ describe('assert-dir', function () {
   it('matches patterns in order given', function () {
     mock({'path1': {'file': 'foo'}, 'path2': {'file': ''}})
     return assertDir('path1', 'path2', [['file', () => true], ['*', () => false]])
+  })
+})
+
+describe('assertFilestructure', function () {
+  let assertFilestructure
+
+  beforeEach(() => {
+    assertFilestructure = assertDir.__get__('assertFilestructure')
+  })
+
+  it('sorts', function () {
+    assert.equal(assertFilestructure(['a', 'b'], ['b', 'a']), undefined)
   })
 })
 
