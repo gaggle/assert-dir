@@ -1,0 +1,14 @@
+{
+  "name": "assert-dir",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint:code": "codeclimate analyze",
+    "lint:fix": "standard --fix",
+    "test": "npm run test:mocha && standard",
+    "test:mocha": "nyc --all mocha && nyc report --reporter=html"
+  },
+  "author": "Jon Lauridsen <mail@jonlauridsen.com>",
+  "license": "ISC"
+}
