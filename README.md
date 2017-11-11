@@ -7,7 +7,9 @@ even if their literal content differs.
 (e.g. HTML or XML files can differ in linebreaks without being semantically different) 
 
 ## Installation
+```bash
 npm i gaggle/assert-dir --save-dev
+```
 
 ## Use
 ```js
