@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gaggle/assert-dir.svg?branch=master)](https://travis-ci.org/gaggle/assert-dir)
+
 # assert-dir
 Asynchronous assertion of two folders being identical
 
